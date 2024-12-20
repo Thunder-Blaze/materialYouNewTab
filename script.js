@@ -1725,8 +1725,8 @@ const handleColorPickerChange = function (event) {
 };
 
 // Add listeners for color picker
-colorPicker.removeEventListener('input', handleColorPickerChange); // Ensure no duplicate listeners
-colorPicker.addEventListener('input', handleColorPickerChange);
+colorPicker.removeEventListener('change', handleColorPickerChange); // Ensure no duplicate listeners
+colorPicker.addEventListener('change', handleColorPickerChange);
 // colorPicker.addEventListener('change', function () {
 //     // console.log('Final color applied:', colorPicker.value);
 //     location.reload();
@@ -3198,7 +3198,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Apply CSS based on initial state
     document.head.appendChild(iconStyle);
     iconStyle.textContent = adaptiveIconToggle.checked ? ADAPTIVE_ICON_CSS : "";
-    
+
     // Add event listener for checkbox
     adaptiveIconToggle.addEventListener("change", function () {
         saveCheckboxState("adaptiveIconToggle", adaptiveIconToggle);
@@ -3226,7 +3226,7 @@ document.addEventListener("DOMContentLoaded", function () {
             browser.theme.onUpdated.removeListener(applyBrowserTheme);
         }
     });
-    
+
     aiToolsCheckbox.addEventListener("change", function () {
         saveCheckboxState("aiToolsCheckboxState", aiToolsCheckbox);
         if (aiToolsCheckbox.checked) {
